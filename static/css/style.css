@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 100vh;
+    background-color: #000000b4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#mainCircle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: relative;
+}
+
+#innerCircle {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: white;
+    top: 35px;
+    left: 35px;
+}
+
+#colorZone {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    top: 5px;
+    left: 110px;
+}
+
+#smallCircle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    top: 13px;
+    left: 140px;
+}
+
+#score {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;   
+    font-size: 20px;
+}

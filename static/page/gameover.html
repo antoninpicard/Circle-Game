@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cercle_rouge_100%25.svg/2048px-Cercle_rouge_100%25.svg.png" type="image/png">
+    <title>Game Over</title>
+</head>
+<style>
+    body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    height: 100vh;
+    background-color: #000000b4;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+#finalScore, #bestScore {
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+#retryButton {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: #000000b4;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#retryButton:hover {
+    background-color: #ccc;
+}
+
+.crown-image {
+    width: 60px;
+    position: relative;
+    top: 30px; /* Déplace l'image de 20 pixels vers le bas */
+    margin-bottom: 1em;
+}
+
+</style>
+<body>
+    <h1>Game Over</h1>
+    <img src="../img/couronne.svg" class="crown-image" />
+    <p id="bestScore"></p>
+    <p id="finalScore"></p>
+    <button id="retryButton">Try Again</button>
+    
+    <script>
+        // Get the score from local storage and display itA
+        let finalScore = parseInt(localStorage.getItem('score'));
+        document.getElementById('finalScore').textContent = "Your Score: " + finalScore;
+
+        // Get the best score from local storage
+        let bestScore = parseInt(localStorage.getItem('bestScore'));
+    
+        if (isNaN(bestScore) || finalScore > bestScore) {
+            // Update the best score
+            bestScore = finalScore;
+            localStorage.setItem('bestScore', bestScore);
+        }
+    
+        document.getElementById('bestScore').textContent = "Best Score: " + bestScore;
+        
+        // Add event listener to the retry button
+        document.getElementById('retryButton').addEventListener('click', function() {
+            // Redirect to the main game page
+            window.location.href = "index.html";
+        });
+    </script>
+    
+</body>
+</html>
